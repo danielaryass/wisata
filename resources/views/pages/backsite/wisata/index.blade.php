@@ -83,8 +83,7 @@
                                                     <td>
                                                         @foreach ($wisata_item->gambar_wisata as $key => $value)
                                                             <div class="col-6 pb-3">
-                                                                <img src="{{ asset('foto-foto-wisata/' . $value->gambar) }}"
-                                                                    class="img-fluid"
+                                                                <img src="{{ asset($value->gambar) }}" class="img-fluid"
                                                                     style="width: 100px; height: 100; object-fit:cover;"
                                                                     alt="" />
                                                             </div>

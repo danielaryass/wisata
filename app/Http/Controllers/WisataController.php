@@ -75,17 +75,17 @@ class WisataController extends Controller
 
         foreach ($request->file('gambar') as $gambar) {
             $nama_gambar = time()."_".$gambar->getClientOriginalName();
-            $tujuan_upload = 'foto-foto-wisata';
+            $tujuan_upload = 'storage/assets/foto-foto-wisata';
             $gambar->move($tujuan_upload,$nama_gambar);
 
             $dudata = [
                 'wisata_id' => $wisata->id,
-                'gambar' => $nama_gambar,
+                'gambar' => $tujuan_upload.'/'.$nama_gambar,
             ];
             GambarWisata::create($dudata);
         }
 
-        return redirect()->back()->with('success', 'Data Wisata Berhasil Ditambahkan');
+        return redirect()->route('wisata.index');
     }
 
     /**
