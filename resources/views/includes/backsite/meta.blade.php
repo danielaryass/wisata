@@ -6,3 +6,4 @@
  <meta name="keywords"
      content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard" />
  <meta name="author" content="PIXINVENT" />
+ <meta name="_token" content="{{ csrf_token() }}" />

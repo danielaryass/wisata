@@ -14,7 +14,14 @@
 
     @include('components.backsite.header')
     @include('components.backsite.sidebar')
-    @yield('content')
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+
+            @yield('content')
+        </div>
+    </div>
+    @include('components.backsite.footer')
     @stack('before-script')
     @include('includes.backsite.script')
     @stack('after-script')

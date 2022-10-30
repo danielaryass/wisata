@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\WisataController;
+// USE wisataapi
+use App\Http\Controllers\WisataApi;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +19,11 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/wisata', [WisataApi::class, 'index'])->name('wisata.index');
 
-Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
+Route::group(['prefix' => 'backsite', 'as' => 'backsite.', 'middleware' => ['auth:sanctum', 'verified']], function () {
     Route::resource('dashboard', DashboardController::class);
+    Route::resource('wisata', WisataController::class);
 });
 
 
