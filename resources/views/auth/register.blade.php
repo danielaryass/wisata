@@ -1,60 +1,162 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
 
-        <x-jet-validation-errors class="mb-4" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description"
+        content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
+    <meta name="keywords"
+        content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
+    <meta name="author" content="PIXINVENT">
+    <title>Login Page - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin Dashboard</title>
+    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700"
+        rel="stylesheet">
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('../assets/app-assets/vendors/css/vendors.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('../assets/app-assets/vendors/css/forms/icheck/icheck.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('../assets/app-assets/vendors/css/forms/icheck/custom.css') }}">
+    <!-- END: Vendor CSS-->
 
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('../assets/app-assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('../assets/app-assets/css/bootstrap-extended.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('../assets/app-assets/css/colors.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('../assets/app-assets/css/components.css') }}">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('../assets/app-assets/css/core/menu/menu-types/vertical-menu.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('../assets/app-assets/css/core/colors/palette-gradient.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('../assets/app-assets/css/pages/login-register.css') }}">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('../assets/assets/css/style.css') }}">
+    <!-- END: Custom CSS-->
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu 1-column  navbar-dark fixed-navbar" data-open="click"
+    data-menu="vertical-menu" data-col="1-column">
+
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
             </div>
+            <div class="content-body">
+                <section class="row navbar-flexbox-container">
+                    <div class="col-12 d-flex align-items-center justify-content-center">
+                        <div class="col-lg-4 col-md-8 col-10 box-shadow-2 p-0">
+                            <div class="card border-grey border-lighten-3 m-0">
+                                <div class="card-header border-0">
+                                    <div class="card-title text-center">
+                                        <img src="{{ asset('../assets/logo.png') }}" alt="branding logo"
+                                            style="max-width: 200px">
+                                    </div>
+                                    <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
+                                        <span>Login to Vtour Sumedang</span>
+                                    </h6>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <form class="form-horizontal" action="{{ route('register') }}" method="POST">
+                                            @csrf
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input type="text" class="form-control input-lg" id="name"
+                                                    name="name" placeholder="Nama Anda" tabindex="1" required
+                                                    data-validation-required-message="Please enter your name.">
+                                                <div class="form-control-position">
+                                                    <i class="la la-user"></i>
+                                                </div>
+                                                <div class="help-block font-small-3"></div>
+                                            </fieldset>
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input type="text" class="form-control input-lg" id="email"
+                                                    name="email" placeholder="Email Anda" tabindex="2" required
+                                                    data-validation-required-message="Please enter your email.">
+                                                <div class="form-control-position">
+                                                    <i class="la la-user"></i>
+                                                </div>
+                                                <div class="help-block font-small-3"></div>
+                                            </fieldset>
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input type="password" class="form-control input-lg" id="password"
+                                                    name="password" placeholder="Password" tabindex="3" required
+                                                    data-validation-required-message="Please enter valid passwords.">
+                                                <div class="form-control-position">
+                                                    <i class="la la-key"></i>
+                                                </div>
+                                                <div class="help-block font-small-3"></div>
+                                            </fieldset>
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input type="password" class="form-control input-lg"
+                                                    id="password_confirmation" name="password_confirmation"
+                                                    placeholder="Konfirmasi Password" tabindex="4" required
+                                                    data-validation-required-message="Please enter valid passwords.">
+                                                <div class="form-control-position">
+                                                    <i class="la la-key"></i>
+                                                </div>
+                                                <div class="help-block font-small-3"></div>
+                                            </fieldset>
 
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
+                                            <button type="submit" class="btn btn-danger btn-block btn-lg"><i
+                                                    class="ft-unlock"></i> Register</button>
+                                        </form>
+                                    </div>
+                                </div>
 
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-jet-label for="terms">
-                        <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms" required />
-
-                            <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
-                                ]) !!}
                             </div>
                         </div>
-                    </x-jet-label>
-                </div>
-            @endif
+                    </div>
+                </section>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-jet-button class="ml-4">
-                    {{ __('Register') }}
-                </x-jet-button>
             </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+
+
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="{{ asset('../assets/app-assets/vendors/js/vendors.min.js') }}"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{{ asset('../assets/app-assets/vendors/js/forms/validation/jqBootstrapValidation.js') }}"></script>
+    <script src="{{ asset('../assets/app-assets/vendors/js/forms/icheck/icheck.min.js') }}"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="{{ asset('../assets/app-assets/js/core/app-menu.js') }}"></script>
+    <script src="{{ asset('../assets/app-assets/js/core/app.js') }}"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="{{ asset('../assets/app-assets/js/scripts/forms/form-login-register.js') }}"></script>
+    <!-- END: Page JS-->
+
+</body>
+<!-- END: Body-->
+
+</html>
