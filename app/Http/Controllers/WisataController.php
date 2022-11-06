@@ -52,17 +52,17 @@ class WisataController extends Controller
             'description' => $request->description,
             'longitude' => $request->longitude,
             'latitude' => $request->latitude,
-            'thumbnail' => $request->hasFile('thumbnail'),
+            'thumbnail' => $request->thumbnail,
         ];
-        $path = public_path('app/public/assets/file-wisata');
+        $path = public_path('app/public/');
         if(!File::isDirectory($path)){
-            $response = Storage::makeDirectory('public/assets/file-wisata');
+            $response = Storage::makeDirectory('public/file-wisata');
         }
 
         // change file locations
         if(isset($data['thumbnail'])){
             $data['thumbnail'] = $request->file('thumbnail')->store(
-                'assets/file-wisata', 'public'
+                'file-wisata', 'public'
             );
         }else{
             $data['thumbnail'] = "";
@@ -75,12 +75,12 @@ class WisataController extends Controller
 
         foreach ($request->file('gambar') as $gambar) {
             $nama_gambar = time()."_".$gambar->getClientOriginalName();
-            $tujuan_upload = 'storage/assets/foto-foto-wisata';
+            $tujuan_upload = 'storage/foto-wisata';
             $gambar->move($tujuan_upload,$nama_gambar);
 
             $dudata = [
                 'wisata_id' => $wisata->id,
-                'gambar' => $tujuan_upload.'/'.$nama_gambar,
+                'gambar' => ("foto-wisata/".$nama_gambar),
             ];
             GambarWisata::create($dudata);
         }

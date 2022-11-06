@@ -8,7 +8,7 @@
                             data-i18n="Dashboard">Dashboard</span></a>
                     <ul class="menu-content">
                         <li>
-                            <a class="menu-item" href="dashboard-ecommerce.html"><i
+                            <a class="menu-item" href="{{ route('backsite.wisata.index') }}"><i
                                     class="la la-cart-plus"></i><span>Wisata</span></a>
                         </li>
                         <li>

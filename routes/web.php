@@ -17,7 +17,7 @@ use App\Http\Controllers\WisataApi;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
 Route::get('/wisata', [WisataApi::class, 'index'])->name('wisata.index');
 
